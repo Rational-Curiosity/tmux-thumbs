@@ -449,7 +449,7 @@ mod tests {
       skip: 0,
       multi: false,
       contrast: false,
-      position: &"",
+      position: "",
       matches: vec![],
       select_foreground_color: colors::get_color("default"),
       select_background_color: colors::get_color("default"),

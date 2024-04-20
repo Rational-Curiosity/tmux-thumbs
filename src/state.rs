@@ -90,7 +90,10 @@ impl<'a> State<'a> {
       .collect::<Vec<_>>();
 
     // This order determines the priority of pattern matching
-    let all_patterns = [exclude_patterns, custom_patterns, patterns].concat();
+    let all_patterns = [
+      exclude_patterns,
+      if custom_patterns.is_empty() { patterns } else { custom_patterns },
+    ].concat();
 
     let mut chunk: &str = self.output;
     let mut offset: usize = 0;
